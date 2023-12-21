@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Tienda online UNIR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Estudiante Cristhian Alejandro Caycedo
 
 ## Available Scripts
 

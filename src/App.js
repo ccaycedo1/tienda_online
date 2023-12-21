@@ -12,7 +12,7 @@ function App() {
   };
 
   const ImagenRaza = ({ src, alt }) => {
-    return <img src={src} alt={alt} />;
+    return <img src={src} alt={alt} className="img-fluid tm-img" />;
   };
 
   let titulo = "Tienda de mascotas";
@@ -114,11 +114,10 @@ function App() {
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                          <img
+                        <ImagenRaza
                             src="https://www.doggysmarket.com.co/wp-content/uploads/elementor/thumbs/bernes-de-la-montana-doggys-market-1-q0jcin8cg1d7xvdxmcrnxbpw7iaoh21l05hnl2f5e8.jpg"
-                            alt="Image"
-                            className="img-fluid tm-img"
-                          />
+                            alt="Bernes de la montaña"
+                          />                          
                           <figcaption>
                             <h2 className="tm-figure-title">
                               <TitulosRaza nombre="Bernes de la montaña" />
@@ -137,14 +136,13 @@ function App() {
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                          <img
+                        <ImagenRaza
                             src="https://upload.wikimedia.org/wikipedia/commons/2/24/Toy_Fox_Terrier_2.jpg"
-                            alt="Image"
-                            className="img-fluid tm-img"
-                          />
+                            alt="Yorkshire terrier"
+                          />                           
                           <figcaption>
-                            <h2 className="tm-figure-title">
-                              Yorkshire terrier
+                            <h2 className="tm-figure-title">                              
+                              <TitulosRaza nombre="Yorkshire terrier" />
                             </h2>
                             <p className="tm-figure-description">
                               El Yorkshire terrier es enérgico, vivo y
@@ -159,13 +157,12 @@ function App() {
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                          <img
+                        <ImagenRaza
                             src="https://www.hillspet.es/content/dam/cp-sites/hills/hills-pet/en_us/exported/dog-breeds/images/img_DogBreed-Saint-Bernard.jpg"
-                            alt="Image"
-                            className="img-fluid tm-img"
-                          />
+                            alt="San Bernardo"
+                          />                          
                           <figcaption>
-                            <h2 className="tm-figure-title">San Bernardo</h2>
+                            <h2 className="tm-figure-title"><TitulosRaza nombre="San Bernardo" /></h2>
                             <p className="tm-figure-description">
                               Con fama de cariñosos, dulces y tolerantes a pesar
                               de su tamaño, los San Bernardo se llevan bien con
@@ -180,11 +177,10 @@ function App() {
 
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                          <img
+                        <ImagenRaza
                             src="https://www.hillspet.es/content/dam/cp-sites/hills/hills-pet/en_us/exported/dog-breeds/images/img_DogBreed-Shih-Tzu.jpg"
-                            alt="Image"
-                            className="img-fluid tm-img"
-                          />
+                            alt="Shih tzu"
+                          />                           
                           <figcaption>
                             <h2 className="tm-figure-title">Shih tzu</h2>
                             <p className="tm-figure-description">
