@@ -1,24 +1,80 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "./css/bootstrap.min.css";
 import "./css/hero-slider-style.css";
 import "./css/magnific-popup.css";
 import "./css/tooplate-style.css";
-import { catalogo } from "./components/catalogo";
+import React, { useState, useEffect } from "react";
 
 function App() {
+
+  const useContador = (valorInicial = 0, paso = 1) => {
+    const [contadorGeneral, setContador] = useState(valorInicial);
+
+    const incrementar = () => {
+      setContador(contadorGeneral + paso);
+    };
+
+    return { contadorGeneral, incrementar };
+  };
+
+  const { contadorGeneral, incrementar } = useContador(0, 1);
+
   const TitulosRaza = ({ nombre }) => {
-    return <div>Raza, {nombre}</div>;
+    return <div>Comprar un, {nombre}</div>;
   };
 
   const ImagenRaza = ({ src, alt }) => {
     return <img src={src} alt={alt} className="img-fluid tm-img" />;
   };
+  
+  const [otros, setContador3] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      console.log("El componente se va a desmontar");
+    };
+  }, []);
+  const [carritoyorkshire, setContador2] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      console.log("El componente se va a desmontar");
+    };
+  }, []);
+
+  const [labrador, setContador] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      console.log("El componente se va a desmontar");
+    };
+  }, []);
+
+  const [bernes, setContador1] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      console.log("El componente se va a desmontar");
+    };
+  }, []);
 
   let titulo = "Tienda de mascotas";
+
   return (
     <div>
       <body>
+        <div>
+          <p>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png"
+              width={50}
+              alt="Carrito"
+            />
+             Carrito Labradores: {labrador} ::: Carrito Bernes: {bernes} :::
+            Carrito Yorkshire: {carritoyorkshire}::: Carrito Otras razas:{" "}
+            {contadorGeneral}
+          </p>
+        </div>
         <div className="cd-hero">
           <div className="cd-slider-nav">
             <nav className="navbar">
@@ -49,24 +105,14 @@ function App() {
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#0" data-no="2">
-                        Multi Two
+                        Carrito
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#0" data-no="3">
-                        Multi Three
+                        Contacto
                       </a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#0" data-no="4">
-                        Our Team
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#0" data-no="5">
-                        Keep in touch
-                      </a>
-                    </li>
+                    </li>                   
                   </ul>
                 </div>
               </div>
@@ -108,16 +154,22 @@ function App() {
                               es inteligente, es fácil de adiestrar y es un
                               excelente compañero de familia.
                             </p>
-                            <a href="./img/tm-img-01.jpg">Ver mas</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={() => setContador(labrador + 1)}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
+
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                        <ImagenRaza
+                          <ImagenRaza
                             src="https://www.doggysmarket.com.co/wp-content/uploads/elementor/thumbs/bernes-de-la-montana-doggys-market-1-q0jcin8cg1d7xvdxmcrnxbpw7iaoh21l05hnl2f5e8.jpg"
                             alt="Bernes de la montaña"
-                          />                          
+                          />
                           <figcaption>
                             <h2 className="tm-figure-title">
                               <TitulosRaza nombre="Bernes de la montaña" />
@@ -133,15 +185,21 @@ function App() {
                             <a href="img/tm-img-02.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={() => setContador1(bernes + 1)}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                        <ImagenRaza
+                          <ImagenRaza
                             src="https://upload.wikimedia.org/wikipedia/commons/2/24/Toy_Fox_Terrier_2.jpg"
                             alt="Yorkshire terrier"
-                          />                           
+                          />
                           <figcaption>
-                            <h2 className="tm-figure-title">                              
+                            <h2 className="tm-figure-title">
                               <TitulosRaza nombre="Yorkshire terrier" />
                             </h2>
                             <p className="tm-figure-description">
@@ -154,15 +212,23 @@ function App() {
                             <a href="img/tm-img-03.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={() => setContador2(carritoyorkshire + 1)}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                        <ImagenRaza
+                          <ImagenRaza
                             src="https://www.hillspet.es/content/dam/cp-sites/hills/hills-pet/en_us/exported/dog-breeds/images/img_DogBreed-Saint-Bernard.jpg"
                             alt="San Bernardo"
-                          />                          
+                          />
                           <figcaption>
-                            <h2 className="tm-figure-title"><TitulosRaza nombre="San Bernardo" /></h2>
+                            <h2 className="tm-figure-title">
+                              <TitulosRaza nombre="San Bernardo" />
+                            </h2>
                             <p className="tm-figure-description">
                               Con fama de cariñosos, dulces y tolerantes a pesar
                               de su tamaño, los San Bernardo se llevan bien con
@@ -173,14 +239,20 @@ function App() {
                             <a href="img/tm-img-04.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={incrementar}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
 
                       <div className="grid-item">
                         <figure className="effect-bubba">
-                        <ImagenRaza
+                          <ImagenRaza
                             src="https://www.hillspet.es/content/dam/cp-sites/hills/hills-pet/en_us/exported/dog-breeds/images/img_DogBreed-Shih-Tzu.jpg"
                             alt="Shih tzu"
-                          />                           
+                          />
                           <figcaption>
                             <h2 className="tm-figure-title">Shih tzu</h2>
                             <p className="tm-figure-description">
@@ -192,6 +264,12 @@ function App() {
                             <a href="img/tm-img-05.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={incrementar}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
@@ -212,6 +290,12 @@ function App() {
                             <a href="img/tm-img-05.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={incrementar}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
@@ -231,6 +315,12 @@ function App() {
                             <a href="img/tm-img-05.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={incrementar}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
@@ -252,6 +342,12 @@ function App() {
                             <a href="img/tm-img-05.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={incrementar}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                       <div className="grid-item">
                         <figure className="effect-bubba">
@@ -270,6 +366,12 @@ function App() {
                             <a href="img/tm-img-05.jpg">View more</a>
                           </figcaption>
                         </figure>
+                        <button
+                          className="btn btn-warning"
+                          onClick={incrementar}
+                        >
+                          Agregar al carrito
+                        </button>
                       </div>
                     </div>
                   </div>
